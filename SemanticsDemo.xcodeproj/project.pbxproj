@@ -25,24 +25,6 @@
 		AA39E3A917A7B6A3002B3476 /* ZSSemanticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3A317A7B6A2002B3476 /* ZSSemanticsManager.m */; };
 		AA39E3AA17A7B6A3002B3476 /* ZSSemanticsTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3A517A7B6A2002B3476 /* ZSSemanticsTag.m */; };
 		AA39E3AB17A7B6A3002B3476 /* ZSSemanticsTagger.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3A717A7B6A3002B3476 /* ZSSemanticsTagger.m */; };
-		AA39E3B617A7B7A8002B3476 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39E36A17A7B66C002B3476 /* Foundation.framework */; };
-		AA39E3BB17A7B7A8002B3476 /* SemanticsKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA39E3BA17A7B7A8002B3476 /* SemanticsKit.h */; };
-		AA39E3BD17A7B7A8002B3476 /* SemanticsKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3BC17A7B7A8002B3476 /* SemanticsKit.m */; };
-		AA39E3C317A7B7A8002B3476 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39E38917A7B66C002B3476 /* XCTest.framework */; };
-		AA39E3C417A7B7A8002B3476 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39E36A17A7B66C002B3476 /* Foundation.framework */; };
-		AA39E3C517A7B7A8002B3476 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39E36E17A7B66C002B3476 /* UIKit.framework */; };
-		AA39E3C817A7B7A8002B3476 /* libSemanticsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39E3B517A7B7A8002B3476 /* libSemanticsKit.a */; };
-		AA39E3CE17A7B7A8002B3476 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA39E3CC17A7B7A8002B3476 /* InfoPlist.strings */; };
-		AA39E3D017A7B7A8002B3476 /* SemanticsKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3CF17A7B7A8002B3476 /* SemanticsKitTests.m */; };
-		AA39E3D717A7B7C6002B3476 /* ZSSemanticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3A317A7B6A2002B3476 /* ZSSemanticsManager.m */; };
-		AA39E3D817A7B7CA002B3476 /* ZSSemanticsTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3A517A7B6A2002B3476 /* ZSSemanticsTag.m */; };
-		AA39E3D917A7B7CD002B3476 /* ZSRegularExpressionTagger.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3A117A7B6A2002B3476 /* ZSRegularExpressionTagger.m */; };
-		AA39E3DA17A7B7D1002B3476 /* ZSSemanticsTagger.m in Sources */ = {isa = PBXBuildFile; fileRef = AA39E3A717A7B6A3002B3476 /* ZSSemanticsTagger.m */; };
-		AA39E3DB17A7B7E6002B3476 /* ZSSemanticsManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA39E3A217A7B6A2002B3476 /* ZSSemanticsManager.h */; };
-		AA39E3DC17A7B7E9002B3476 /* ZSSemanticsTag.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA39E3A417A7B6A2002B3476 /* ZSSemanticsTag.h */; };
-		AA39E3DD17A7B7EE002B3476 /* ZSRegularExpressionTagger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA39E3A017A7B6A2002B3476 /* ZSRegularExpressionTagger.h */; };
-		AA39E3DE17A7B7F3002B3476 /* ZSSemanticsTagger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA39E3A617A7B6A3002B3476 /* ZSSemanticsTagger.h */; };
-		AA39E3DF17A7B872002B3476 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39E36E17A7B66C002B3476 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,31 +35,7 @@
 			remoteGlobalIDString = AA39E36617A7B66C002B3476;
 			remoteInfo = SemanticsDemo;
 		};
-		AA39E3C617A7B7A8002B3476 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA39E35F17A7B66C002B3476 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA39E3B417A7B7A8002B3476;
-			remoteInfo = SemanticsKit;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		AA39E3B317A7B7A8002B3476 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				AA39E3DE17A7B7F3002B3476 /* ZSSemanticsTagger.h in CopyFiles */,
-				AA39E3BB17A7B7A8002B3476 /* SemanticsKit.h in CopyFiles */,
-				AA39E3DB17A7B7E6002B3476 /* ZSSemanticsManager.h in CopyFiles */,
-				AA39E3DC17A7B7E9002B3476 /* ZSSemanticsTag.h in CopyFiles */,
-				AA39E3DD17A7B7EE002B3476 /* ZSRegularExpressionTagger.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AA39E36717A7B66C002B3476 /* SemanticsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SemanticsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,14 +66,6 @@
 		AA39E3A617A7B6A3002B3476 /* ZSSemanticsTagger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSemanticsTagger.h; sourceTree = "<group>"; };
 		AA39E3A717A7B6A3002B3476 /* ZSSemanticsTagger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSemanticsTagger.m; sourceTree = "<group>"; };
 		AA39E3B017A7B75F002B3476 /* ZSSemanticsKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSemanticsKit.h; sourceTree = "<group>"; };
-		AA39E3B517A7B7A8002B3476 /* libSemanticsKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSemanticsKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA39E3B917A7B7A8002B3476 /* SemanticsKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SemanticsKit-Prefix.pch"; sourceTree = "<group>"; };
-		AA39E3BA17A7B7A8002B3476 /* SemanticsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemanticsKit.h; sourceTree = "<group>"; };
-		AA39E3BC17A7B7A8002B3476 /* SemanticsKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemanticsKit.m; sourceTree = "<group>"; };
-		AA39E3C217A7B7A8002B3476 /* SemanticsKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemanticsKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA39E3CB17A7B7A8002B3476 /* SemanticsKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SemanticsKitTests-Info.plist"; sourceTree = "<group>"; };
-		AA39E3CD17A7B7A8002B3476 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AA39E3CF17A7B7A8002B3476 /* SemanticsKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemanticsKitTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,26 +89,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA39E3B217A7B7A8002B3476 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA39E3DF17A7B872002B3476 /* UIKit.framework in Frameworks */,
-				AA39E3B617A7B7A8002B3476 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA39E3BF17A7B7A8002B3476 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA39E3C317A7B7A8002B3476 /* XCTest.framework in Frameworks */,
-				AA39E3C517A7B7A8002B3476 /* UIKit.framework in Frameworks */,
-				AA39E3C817A7B7A8002B3476 /* libSemanticsKit.a in Frameworks */,
-				AA39E3C417A7B7A8002B3476 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -168,8 +98,6 @@
 				AA39E39F17A7B6A2002B3476 /* SemanticsKit */,
 				AA39E37017A7B66C002B3476 /* SemanticsDemo */,
 				AA39E38F17A7B66C002B3476 /* SemanticsDemoTests */,
-				AA39E3B717A7B7A8002B3476 /* SemanticsKit */,
-				AA39E3C917A7B7A8002B3476 /* SemanticsKitTests */,
 				AA39E36917A7B66C002B3476 /* Frameworks */,
 				AA39E36817A7B66C002B3476 /* Products */,
 			);
@@ -180,8 +108,6 @@
 			children = (
 				AA39E36717A7B66C002B3476 /* SemanticsDemo.app */,
 				AA39E38817A7B66C002B3476 /* SemanticsDemoTests.xctest */,
-				AA39E3B517A7B7A8002B3476 /* libSemanticsKit.a */,
-				AA39E3C217A7B7A8002B3476 /* SemanticsKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,42 +198,6 @@
 			name = Abstract;
 			sourceTree = "<group>";
 		};
-		AA39E3B717A7B7A8002B3476 /* SemanticsKit */ = {
-			isa = PBXGroup;
-			children = (
-				AA39E3BA17A7B7A8002B3476 /* SemanticsKit.h */,
-				AA39E3BC17A7B7A8002B3476 /* SemanticsKit.m */,
-				AA39E3B817A7B7A8002B3476 /* Supporting Files */,
-			);
-			path = SemanticsKit;
-			sourceTree = "<group>";
-		};
-		AA39E3B817A7B7A8002B3476 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AA39E3B917A7B7A8002B3476 /* SemanticsKit-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AA39E3C917A7B7A8002B3476 /* SemanticsKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				AA39E3CF17A7B7A8002B3476 /* SemanticsKitTests.m */,
-				AA39E3CA17A7B7A8002B3476 /* Supporting Files */,
-			);
-			path = SemanticsKitTests;
-			sourceTree = "<group>";
-		};
-		AA39E3CA17A7B7A8002B3476 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AA39E3CB17A7B7A8002B3476 /* SemanticsKitTests-Info.plist */,
-				AA39E3CC17A7B7A8002B3476 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,41 +236,6 @@
 			productReference = AA39E38817A7B66C002B3476 /* SemanticsDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AA39E3B417A7B7A8002B3476 /* SemanticsKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA39E3D117A7B7A8002B3476 /* Build configuration list for PBXNativeTarget "SemanticsKit" */;
-			buildPhases = (
-				AA39E3B117A7B7A8002B3476 /* Sources */,
-				AA39E3B217A7B7A8002B3476 /* Frameworks */,
-				AA39E3B317A7B7A8002B3476 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SemanticsKit;
-			productName = SemanticsKit;
-			productReference = AA39E3B517A7B7A8002B3476 /* libSemanticsKit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		AA39E3C117A7B7A8002B3476 /* SemanticsKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA39E3D417A7B7A8002B3476 /* Build configuration list for PBXNativeTarget "SemanticsKitTests" */;
-			buildPhases = (
-				AA39E3BE17A7B7A8002B3476 /* Sources */,
-				AA39E3BF17A7B7A8002B3476 /* Frameworks */,
-				AA39E3C017A7B7A8002B3476 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AA39E3C717A7B7A8002B3476 /* PBXTargetDependency */,
-			);
-			name = SemanticsKitTests;
-			productName = SemanticsKitTests;
-			productReference = AA39E3C217A7B7A8002B3476 /* SemanticsKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -391,9 +246,6 @@
 				ORGANIZATIONNAME = MagicalBits;
 				TargetAttributes = {
 					AA39E38717A7B66C002B3476 = {
-						TestTargetID = AA39E36617A7B66C002B3476;
-					};
-					AA39E3C117A7B7A8002B3476 = {
 						TestTargetID = AA39E36617A7B66C002B3476;
 					};
 				};
@@ -413,8 +265,6 @@
 			targets = (
 				AA39E36617A7B66C002B3476 /* SemanticsDemo */,
 				AA39E38717A7B66C002B3476 /* SemanticsDemoTests */,
-				AA39E3B417A7B7A8002B3476 /* SemanticsKit */,
-				AA39E3C117A7B7A8002B3476 /* SemanticsKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -435,14 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA39E39417A7B66C002B3476 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA39E3C017A7B7A8002B3476 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA39E3CE17A7B7A8002B3476 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,26 +313,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA39E3B117A7B7A8002B3476 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA39E3D717A7B7C6002B3476 /* ZSSemanticsManager.m in Sources */,
-				AA39E3D817A7B7CA002B3476 /* ZSSemanticsTag.m in Sources */,
-				AA39E3BD17A7B7A8002B3476 /* SemanticsKit.m in Sources */,
-				AA39E3D917A7B7CD002B3476 /* ZSRegularExpressionTagger.m in Sources */,
-				AA39E3DA17A7B7D1002B3476 /* ZSSemanticsTagger.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA39E3BE17A7B7A8002B3476 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AA39E3D017A7B7A8002B3476 /* SemanticsKitTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -498,11 +320,6 @@
 			isa = PBXTargetDependency;
 			target = AA39E36617A7B66C002B3476 /* SemanticsDemo */;
 			targetProxy = AA39E38D17A7B66C002B3476 /* PBXContainerItemProxy */;
-		};
-		AA39E3C717A7B7A8002B3476 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA39E3B417A7B7A8002B3476 /* SemanticsKit */;
-			targetProxy = AA39E3C617A7B7A8002B3476 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -527,14 +344,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				AA39E39317A7B66C002B3476 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AA39E3CC17A7B7A8002B3476 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA39E3CD17A7B7A8002B3476 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -676,74 +485,6 @@
 			};
 			name = Release;
 		};
-		AA39E3D217A7B7A8002B3476 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/SemanticsKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SemanticsKit/SemanticsKit-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		AA39E3D317A7B7A8002B3476 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/SemanticsKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SemanticsKit/SemanticsKit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		AA39E3D517A7B7A8002B3476 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SemanticsDemo.app/SemanticsDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SemanticsKit/SemanticsKit-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "SemanticsKitTests/SemanticsKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		AA39E3D617A7B7A8002B3476 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SemanticsDemo.app/SemanticsDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SemanticsKit/SemanticsKit-Prefix.pch";
-				INFOPLIST_FILE = "SemanticsKitTests/SemanticsKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -773,22 +514,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		AA39E3D117A7B7A8002B3476 /* Build configuration list for PBXNativeTarget "SemanticsKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA39E3D217A7B7A8002B3476 /* Debug */,
-				AA39E3D317A7B7A8002B3476 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		AA39E3D417A7B7A8002B3476 /* Build configuration list for PBXNativeTarget "SemanticsKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA39E3D517A7B7A8002B3476 /* Debug */,
-				AA39E3D617A7B7A8002B3476 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
