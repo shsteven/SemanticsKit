@@ -38,6 +38,16 @@
                ReferencedContainer = "container:SemanticsDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AA39E3C117A7B7A8002B3476"
+               BuildableName = "SemanticsKitTests.xctest"
+               BlueprintName = "SemanticsKitTests"
+               ReferencedContainer = "container:SemanticsDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
