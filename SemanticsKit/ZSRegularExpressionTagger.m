@@ -113,6 +113,8 @@
     if (editMask & NSTextStorageEditedCharacters) {
 //        NSLog(@"edite range: (%d, %d) changeInLength: %d", newCharRange.location, newCharRange.length, delta);
         
+#warning Perhaps it is best to treat it case by case?
+#warning Typing at end, deleting at end, typing in the middle, deleting in the middle, cutting, pasting
 #warning TODO: solve concurrency issue with getTagsAtIndex:
         // 1. Deduce invalidate range based on invalidatedCharRange
         NSRange rangeToRescan = [textStorage.string lineRangeForRange:invalidatedCharRange];
@@ -163,6 +165,9 @@
 
 - (void)adjustTagsAfterRange: (NSRange)invalidatedRange
                        delta: (NSInteger)delta {
+    // Appending a new char, no need to adjust
+    if (NSMaxRange(invalidatedRange) >= self.textStorage.string.length) return;
+    
     [self.tags enumerateObjectsWithOptions:NSEnumerationConcurrent
                                 usingBlock:^(ZSSemanticsTag *aTag, NSUInteger idx, BOOL *stop) {
                                     if (aTag.range.location >= NSMaxRange(invalidatedRange)) {
