@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '7.0'
 
-  s.source_files = 'SemanticsKit/*.{h,m}'
+  s.source_files = 'SemanticsKit/*'
 
   s.public_header_files = 'SemanticsKit/*.h'
 
