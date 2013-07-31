@@ -31,6 +31,7 @@
 
         self.operationQueue = [[NSOperationQueue alloc] init];
         
+        /*
         self.mentionTagger = [[ZSRegularExpressionTagger alloc] initWithPattern:@"@\\w+"
                                                                  operationQueue:self.operationQueue
                                                                     textStorage:self.textStorage
@@ -43,6 +44,8 @@
                                                                              type:kAtCommandTagType];
         
         _taggers = @[self.mentionTagger, self.atCommandTagger];
+         */
+        _taggers = @[];
     }
 
     _textStorage = textStorage;
@@ -53,33 +56,34 @@
 - (void)getTagsAtIndex: (NSInteger)index
              withBlock: (void (^)(NSArray *))block {
     
-    /*
-     If async becomes an issue, enable this block
-    if (taggersPendingCallback.count)
-        [taggersPendingCallback enumerateObjectsUsingBlock:^(ZSSemanticsTagger *tagger, NSUInteger idx, BOOL *stop) {
-            [tagger.getTagOperation cancel];
-            tagger.getTagOperation = nil;
-        }];
-     */
+    [self.getTagOperation cancel];
     
-    // Discard any previous attempt
     tagsAtQueryIndex = [NSMutableArray new];
-    taggersPendingCallback = [self.taggers mutableCopy];
-    
-    // Kick off async tag querying
-    // Callback when all taggers completes getTagAtIndex
-    [self.taggers enumerateObjectsUsingBlock:^(ZSSemanticsTagger *tagger, NSUInteger idx, BOOL *stop) {
-       [tagger getTagAtIndex:index
-                   withBlock:^(ZSSemanticsTag *aTag) {
-                       if (aTag)
-                           [tagsAtQueryIndex addObject:aTag];
-                       [taggersPendingCallback removeObject:tagger];
-                       
-                       if (!taggersPendingCallback.count)
-                           block(tagsAtQueryIndex);
-                   }];
+    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+        // Kick off async tag querying
+        
+        [self.taggers enumerateObjectsUsingBlock:^(ZSSemanticsTagger *tagger, NSUInteger idx, BOOL *stop) {
+            ZSSemanticsTag *tag = [tagger getTagAtIndex:index];
+            if (tag)
+                [tagsAtQueryIndex addObject:tag];
+        }];
     }];
+    
+    [op setCompletionBlock:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            block(tagsAtQueryIndex);
+        });
+    }];
+    
+    self.getTagOperation = op;
+    
+    [self.operationQueue addOperation:op];
     
 }
 
+- (void)addTagger:(ZSSemanticsTagger *)tagger {
+    _taggers = [self.taggers arrayByAddingObject:tagger];
+}
+
 @end
+

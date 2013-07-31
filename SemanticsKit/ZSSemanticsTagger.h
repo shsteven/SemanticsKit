@@ -26,39 +26,18 @@
 #import <Foundation/Foundation.h>
 #import "ZSSemanticsTag.h"
 
-typedef void(^TaggerCompletionBlock)(id tagger);
+typedef void(^TaggerCompletionBlock)(NSArray *tags);
 
 @interface ZSSemanticsTagger : NSLayoutManager
 
 @property (assign) ZSSemanticsTagType type;
 
-@property (strong) NSOperationQueue *operationQueue;
-
-// Use operation's dependency to work this out
-@property (strong) NSOperation *taggingOperation;
-@property (strong) NSOperation *getTagOperation;
-
 #pragma mark - Subclass Override
-// Scans the entire string async, generate tags
+
+- (ZSSemanticsTag *)getTagAtIndex: (NSInteger)index;
+
+// Only use this when we need all the tags at once
 - (void)generateTagsWithCompletion:(TaggerCompletionBlock)completion;
 
-
-/**
- Query
- A single tagger instance should only have one tag at an index
- 
- Designed to be async and un-reliable
- If called 3 times in a row and the first two didn't complete, it's ok -- just honor the 3rd one
- 
- */
-- (void)getTagAtIndex: (NSUInteger)index
-            withBlock:(void (^)(ZSSemanticsTag *))block;
-
-
-/**
- All tags
- Can be used when generating indexing tokens
- */
-@property (readonly) NSArray *tags;
 
 @end

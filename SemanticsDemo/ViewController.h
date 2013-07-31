@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZSSemanticsKit.h"
+@class ZSSemanticsManager;
 
 @interface ViewController : UIViewController <UITextViewDelegate>
 

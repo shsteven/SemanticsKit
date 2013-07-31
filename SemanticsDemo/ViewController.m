@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZSSemanticsKit.h"
 
 @interface ViewController ()
 
@@ -20,6 +21,13 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.semanticsManager = [[ZSSemanticsManager alloc] initWithTextStorage:self.textView.textStorage];
+    [self.semanticsManager addTagger:[ZSRegularExpressionTagger taggerWithPattern:@"@\\w+"
+                                                                      textStorage:self.semanticsManager.textStorage
+                                                                             type:kMentionTagType]];
+    
+    [self.semanticsManager addTagger:[ZSRegularExpressionTagger taggerWithPattern:@"^@(\\w+).*$"
+                                                                      textStorage:self.semanticsManager.textStorage
+                                                                             type:kAtCommandTagType]];
 }
 
 - (void)didReceiveMemoryWarning

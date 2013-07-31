@@ -17,7 +17,7 @@
 
 @property (strong) NSOperationQueue *operationQueue;
 
-//@property (strong) NSOperation *getTagOperation;
+@property (strong) NSOperation *getTagOperation;
 
 @property (strong) NSArray *taggers;
 
@@ -25,6 +25,7 @@
 
 - (id)initWithTextStorage: (NSTextStorage *)textStorage;
 
+- (void)addTagger: (ZSSemanticsTagger *)tagger;
 
 /**
  Designed to be async and un-reliable
@@ -34,6 +35,6 @@
 - (void)getTagsAtIndex: (NSInteger)index
              withBlock: (void (^)(NSArray *))block;
 
-// TODO: getTagsInRange:withBlock:
 
 @end
+

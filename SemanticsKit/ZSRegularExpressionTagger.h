@@ -13,8 +13,11 @@
 @property (strong) NSRegularExpression *regularExpression;
 
 - (id)initWithPattern: (NSString *)pattern
-       operationQueue: (NSOperationQueue *)operationQueue
           textStorage: (NSTextStorage *)textStorage
                  type: (ZSSemanticsTagType)type;
+
++ (ZSRegularExpressionTagger *)taggerWithPattern: (NSString *)pattern
+                                     textStorage: (NSTextStorage *)textStorage
+                                            type: (ZSSemanticsTagType)type;
 
 @end
