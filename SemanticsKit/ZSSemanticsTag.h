@@ -13,7 +13,8 @@ typedef NSInteger ZSSemanticsTagType;
 enum ZSSemanticsTagType {
     kMentionTagType = 0,
     kAtCommandTagType = 1,
-    kHashtagTagType
+    kHashtagTagType,
+    kMarkdownImageTagType
 //    kTODOCommandTagType,
 //    kEventComandTagType
     };
