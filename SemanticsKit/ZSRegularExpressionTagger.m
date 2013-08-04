@@ -86,6 +86,9 @@
 
 - (NSArray *)generateTagsForRange: (NSRange)range {
     
+    // In case the string had changed, previous call becomes invalid
+    if (NSMaxRange(range) > self.textStorage.string.length) return @[];
+    
     NSMutableArray *tags = [NSMutableArray new];
     [self.regularExpression enumerateMatchesInString:self.textStorage.string
                                              options:0
