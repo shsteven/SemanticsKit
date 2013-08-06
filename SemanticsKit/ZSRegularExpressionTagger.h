@@ -16,11 +16,9 @@
 @property (weak) NSOperationQueue *operationQueue;
 
 - (id)initWithPattern: (NSString *)pattern
-//          textStorage: (NSTextStorage *)textStorage
                  type: (ZSSemanticsTagType)type;
 
 + (ZSRegularExpressionTagger *)taggerWithPattern: (NSString *)pattern
-//                                     textStorage: (NSTextStorage *)textStorage
                                             type: (ZSSemanticsTagType)type;
 
 @end
