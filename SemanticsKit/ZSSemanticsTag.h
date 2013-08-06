@@ -23,7 +23,8 @@ enum ZSSemanticsTagType {
 
 @property (assign) ZSSemanticsTagType type;
 
-@property (weak) NSTextStorage *textStorage;
+// We need to hold on the string, as long as the tag is still in use
+@property (strong) NSString *string;
 
 @property (assign) NSRange range;
 
@@ -36,6 +37,6 @@ enum ZSSemanticsTagType {
 @property (readonly) NSString *text;
 
 
-@property (readonly) NSString *currentLine;
+//@property (readonly) NSString *currentLine;
 
 @end

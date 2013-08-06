@@ -15,15 +15,15 @@
 @implementation ZSRegularExpressionTagger
 
 - (id)initWithPattern: (NSString *)pattern
-          textStorage: (NSTextStorage *)textStorage
+//          textStorage: (NSTextStorage *)textStorage
                  type: (ZSSemanticsTagType)type {
     self = [super init];
     
     self.type = type;
     
-    NSParameterAssert(textStorage);
+//    NSParameterAssert(textStorage);
     
-    [textStorage addLayoutManager:self];
+//    [textStorage addLayoutManager:self];
     
     NSError *error;
     _regularExpression = [[NSRegularExpression alloc] initWithPattern:pattern
@@ -38,16 +38,17 @@
 }
 
 + (ZSRegularExpressionTagger *)taggerWithPattern: (NSString *)pattern
-                                     textStorage: (NSTextStorage *)textStorage
+//                                     textStorage: (NSTextStorage *)textStorage
                                             type: (ZSSemanticsTagType)type {
     ZSRegularExpressionTagger *tagger = [[ZSRegularExpressionTagger alloc] initWithPattern:pattern
-                                                                               textStorage:textStorage
+//                                                                               textStorage:textStorage
                                                                                       type:type];
     
     return tagger;
 }
 
 
+/*
 // Get all tags in one shot
 - (void)generateTagsWithCompletion:(TaggerCompletionBlock)completion {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
@@ -59,50 +60,70 @@
     });
 
 }
+*/
 
-- (ZSSemanticsTag *)getTagAtIndex: (NSInteger)index {
+- (ZSSemanticsTag *)getTagInString: (NSString *)string
+                           atIndex: (NSInteger)index {
     
     __block ZSSemanticsTag *matchingTag;
+    
+    NSRange range = [string lineRangeForRange:NSMakeRange(index, 0)];
+    
+    [self.regularExpression enumerateMatchesInString:string
+                                             options:NSRegularExpressionCaseInsensitive
+                                               range:range
+                                          usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                                              if (NSLocationInRange(index, result.range) || index == NSMaxRange(result.range)) {
+                                                  ZSSemanticsTag *newTag = [ZSSemanticsTag new];
+                                                  newTag.range = result.range;
+                                                  newTag.textChecingResult = result;
+                                                  newTag.string = string;
+                                                  newTag.type = self.type;
 
-    NSRange range = [self.textStorage.string lineRangeForRange:NSMakeRange(index, 0)];
-    
-    NSArray *tagsInRange = [self generateTagsForRange:range];
-    
-    [tagsInRange enumerateObjectsWithOptions:NSEnumerationConcurrent | NSEnumerationReverse
-                                usingBlock:^(ZSSemanticsTag *tag, NSUInteger idx, BOOL *stop) {
-                                    // word| also matches (where | is the cursor)
-                                    if (NSLocationInRange(index, tag.range) || index == NSMaxRange(tag.range)) {
-                                        matchingTag = tag;
-                                        *stop = YES;
-                                    }
-                                }];
-    
+                                                  matchingTag = newTag;
+                                                  
+                                                  *stop = YES;
+                                              }
+                               
+
+                                          }];
+
+
     return matchingTag;
 
 }
 
 
 #pragma mark - Workhorse
-
+/*
 - (NSArray *)generateTagsForRange: (NSRange)range {
     
-    // In case the string had changed, previous call becomes invalid
-    if (NSMaxRange(range) > self.textStorage.string.length) return @[];
-    
     NSMutableArray *tags = [NSMutableArray new];
-    [self.regularExpression enumerateMatchesInString:self.textStorage.string
-                                             options:0
-                                               range:range
-                                          usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-                                              ZSSemanticsTag *newTag = [ZSSemanticsTag new];
-                                              newTag.range = result.range;
-                                              newTag.textChecingResult = result;
-                                              newTag.textStorage = self.textStorage;
-                                              newTag.type = self.type;
-                                              [tags addObject:newTag];
-                                          }];
+
+    // In case the string had changed, previous call becomes invalid
+    
+#warning TODO: fix isse with async + underlying string changed
+//    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSRange safeRange = NSIntersectionRange(range, NSMakeRange(0, self.textStorage.string.length));
+        
+        [self.regularExpression enumerateMatchesInString:self.textStorage.string
+                                                 options:0
+                                                   range:safeRange
+                                              usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                                                  ZSSemanticsTag *newTag = [ZSSemanticsTag new];
+                                                  newTag.range = result.range;
+                                                  newTag.textChecingResult = result;
+                                                  newTag.textStorage = self.textStorage;
+                                                  newTag.type = self.type;
+                                                  [tags addObject:newTag];
+                                              }];
+//    });
+    
+
     
     return tags;
 }
+*/
 
 @end
+

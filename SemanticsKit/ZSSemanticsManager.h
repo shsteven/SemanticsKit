@@ -13,11 +13,11 @@
 
 @interface ZSSemanticsManager : NSObject
 
-@property (strong) NSTextStorage *textStorage;
+//@property (strong) NSTextStorage *textStorage;
 
 @property (strong) NSOperationQueue *operationQueue;
 
-@property (strong) NSOperation *getTagOperation;
+//@property (strong) NSOperation *getTagOperation;
 
 @property (strong) NSArray *taggers;
 
@@ -32,9 +32,25 @@
  If called 3 times in a row and the first two didn't complete, it's ok -- just honor the 3rd one
  
  */
-- (void)getTagsAtIndex: (NSInteger)index
+
+- (void)getTagsInString: (NSString *)string
+                atIndex: (NSInteger)index
              withBlock: (void (^)(NSArray *))block;
 
 
 @end
 
+
+
+@interface ZSSemanticsGetTagOperation : NSOperation {
+    NSMutableArray *tagsAtQueryIndex;
+    NSMutableArray *taggersPendingCallback;
+}
+
+@property (copy) NSString *string;
+@property (assign) NSInteger index;
+@property (strong) NSArray *taggers;
+
+@property (copy) void (^successBlock)(NSArray *);
+
+@end

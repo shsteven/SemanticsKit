@@ -11,15 +11,17 @@
 @implementation ZSSemanticsTag
 
 - (NSString *)text {
-    return [self.textStorage.string substringWithRange:self.range];
+    return [self.string substringWithRange:self.range];
 }
 
+/*
 - (NSString *)currentLine {
-    NSRange lineRange = [self.textStorage.string lineRangeForRange:self.range];
+    NSRange lineRange = [self.string lineRangeForRange:self.range];
     NSString *text = [self.textStorage.string substringWithRange:lineRange];
     text = [text stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     return text;
 }
+ */
 
 - (NSString *)description {
     if (self.type == kAtCommandTagType) return [NSString stringWithFormat:@"command: %@",self.text];

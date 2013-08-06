@@ -28,13 +28,14 @@
 
 typedef void(^TaggerCompletionBlock)(NSArray *tags);
 
-@interface ZSSemanticsTagger : NSLayoutManager
+@interface ZSSemanticsTagger : NSObject
 
 @property (assign) ZSSemanticsTagType type;
 
 #pragma mark - Subclass Override
 
-- (ZSSemanticsTag *)getTagAtIndex: (NSInteger)index;
+- (ZSSemanticsTag *)getTagInString: (NSString *)string
+                           atIndex: (NSInteger)index;
 
 // Only use this when we need all the tags at once
 - (void)generateTagsWithCompletion:(TaggerCompletionBlock)completion;

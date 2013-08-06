@@ -11,7 +11,8 @@
 
 @implementation ZSSemanticsTagger
 
-- (ZSSemanticsTag *)getTagAtIndex: (NSInteger)index {
+- (ZSSemanticsTag *)getTagInString: (NSString *)string
+                           atIndex: (NSInteger)index {
     NSAssert(NO, @"This is an abstract class. Use a concrete subclass of ZSSemanticsTagger!");
     return nil;
 }
