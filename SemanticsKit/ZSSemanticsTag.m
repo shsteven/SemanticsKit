@@ -11,6 +11,8 @@
 @implementation ZSSemanticsTag
 
 - (NSString *)text {
+    if (self.effectiveRange.length)
+        return [self.string substringWithRange:self.effectiveRange];
     return [self.string substringWithRange:self.range];
 }
 

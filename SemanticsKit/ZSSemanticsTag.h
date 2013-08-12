@@ -26,7 +26,11 @@ enum ZSSemanticsTagType {
 // We need to hold on the string, as long as the tag is still in use
 @property (strong) NSString *string;
 
+// Full range detected by regex, including any control symbols such as @, @todo
 @property (assign) NSRange range;
+
+// The range in which text doesn't contain control symbyl such as @, and is useful for searching / comparison
+@property (assign) NSRange effectiveRange;
 
 @property (strong) NSTextCheckingResult *textChecingResult;
 

@@ -54,6 +54,7 @@
                                               if (NSLocationInRange(index, result.range) || index == NSMaxRange(result.range)) {
                                                   ZSSemanticsTag *newTag = [ZSSemanticsTag new];
                                                   newTag.range = result.range;
+                                                  newTag.effectiveRange = NSMakeRange(result.range.location + 1, result.range.length - 1 );
                                                   newTag.textChecingResult = result;
                                                   newTag.string = string;
                                                   newTag.type = self.type;
